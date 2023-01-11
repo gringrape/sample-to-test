@@ -1,0 +1,35 @@
+{
+  "name": "sample-to-test",
+  "description": "샘플 입출력을 테스트코드로 바꿔주기",
+  "type": "module",
+  "scripts": {
+    "watch:test": "NODE_OPTIONS=--experimental-vm-modules jest --watchAll",
+    "start": "parcel index.html -p 8080",
+    "build": "parcel build --public-url ./ index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gringrape/sample-to-test.git"
+  },
+  "author": "Jin",
+  "license": "MIT",
+  "homepage": "https://github.com/gringrape/sample-to-test#readme",
+  "devDependencies": {
+    "@types/jest": "^29.2.5",
+    "eslint": "^8.31.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.7.0",
+    "eslint-plugin-react": "^7.32.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "jest": "^29.3.1",
+    "parcel": "^2.8.2",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "clipboard-copy": "^4.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
