@@ -1,15 +1,13 @@
 import { useState } from 'react';
 
-import Code from './Code';
-
 import useForceUpdate from './useForceUpdate';
 
-export default function useTestCode() {
-  const [code] = useState(new Code());
+export default function useModel(modelClass) {
+  const [model] = useState(modelClass.of());
 
   const forceUpdate = useForceUpdate();
 
-  const proxy = new Proxy(code, {
+  const proxy = new Proxy(model, {
     set(target, prop, value) {
       forceUpdate();
       // eslint-disable-next-line no-param-reassign
@@ -18,8 +16,5 @@ export default function useTestCode() {
     },
   });
 
-  return {
-    testCode: proxy.toString(),
-    parse: proxy.setFrom.bind(proxy),
-  };
+  return proxy;
 }
