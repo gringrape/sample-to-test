@@ -1,9 +1,17 @@
 /* eslint-disable class-methods-use-this */
 export default class Code {
+  static of() {
+    return new Code();
+  }
+
   code = '';
 
   setFrom(rawText) {
     this.code = this.generateTestCode(rawText);
+  }
+
+  clear() {
+    this.code = '';
   }
 
   generateTestCode(rawText) {
