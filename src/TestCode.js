@@ -7,11 +7,18 @@ export default class Code {
   code = '';
 
   setFrom(rawText) {
+    if (!this.check(rawText)) {
+      return;
+    }
     this.code = this.generateTestCode(rawText);
   }
 
   clear() {
     this.code = '';
+  }
+
+  check(rawText) {
+    return !rawText.startsWith('test(');
   }
 
   generateTestCode(rawText) {
